@@ -92,7 +92,6 @@ def login(request_data: LoginRequest, request: Request):
         raise HTTPException(status_code=500, detail="Internal server error")
     
 
-
 @app.get("/verify-token")
 def verify_token_endpoint(payload=Depends(verify_token)):
     email = payload.get("sub")
@@ -106,7 +105,6 @@ def verify_token_endpoint(payload=Depends(verify_token)):
         raise HTTPException(status_code=404, detail="User not found")
 
     return {"valid": True, "user": user}
-
 
 
 @app.get("/getCountry")
@@ -195,7 +193,6 @@ def get_state(country_id: int = Query(..., description="Country ID to filter sta
         return JSONResponse(status_code=500, content={"error": str(e)})
     
 
-
 @app.get("/getCity")
 def get_state(state_id: int = Query(..., description="State ID to filter states and properties")):
     try:
@@ -240,7 +237,6 @@ def get_state(state_id: int = Query(..., description="State ID to filter states 
         return JSONResponse(status_code=500, content={"error": str(e)})
     
 
-
 @app.get("/getMallByCityId")
 def get_mall(city_id: int = Query(..., description="City ID to filter states and properties")):
     try:
@@ -270,4 +266,33 @@ def get_mall(city_id: int = Query(..., description="City ID to filter states and
         print("🚨 Error in /getMallByCityId endpoint:", str(e))
         return JSONResponse(status_code=500, content={"error": str(e)})
 
+
+@app.get("/getStores")
+def get_store_by_mallid(mall_id: int = Query(..., description="get store data by mall id")):
+    try:
+        cursor = db.get_cursor()
+
+        # Query for properties
+        query_properties = """
+           SELECT 
+                s.StoreName,
+                c.CategoryName,
+                sc.SubCategoryName,
+                b.BrandName
+            FROM geo.tbglstore s
+            INNER JOIN geo.tbms_category c ON s.category_ID = c.CategoryID
+            INNER JOIN geo.tbms_subcategory sc ON s.sub_category_ID = sc.SubCategoryID
+            INNER JOIN geo.tbglbrand b ON s.BrandID = b.BrandID
+            WHERE s.mall_id = %s AND s.is_active = '1' AND s.is_deleted = '0'
+        """
+        cursor.execute(query_properties, (mall_id,))
+        properties = cursor.fetchall()
+
+        return {
+            "stores": properties
+        }
+
+    except Exception as e:
+        print("🚨 Error in /getstorebymall endpoint:", str(e))
+        return JSONResponse(status_code=500, content={"error": str(e)})
    
