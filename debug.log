@@ -1,0 +1,4 @@
+2025-05-26 12:36:59,338 - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-26 12:40:03,369 - DEBUG - registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+2025-05-26 12:42:16,575 - DEBUG - Login request received for email: chatterjeeanirban888@gmail.com
+2025-05-26 12:42:16,892 - INFO - Login successful for chatterjeeanirban888@gmail.com
