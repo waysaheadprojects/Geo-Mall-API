@@ -119,6 +119,36 @@ def get_country():
     except Exception as e:
         print("🚨 Error in /getCountry endpoint:", str(e))
         return {"error": str(e)}
+    
+
+@app.get("/getMallByCountryId")
+def get_mall_by_country(country_id: int = Query(..., description="Country ID to filter  properties")):
+    try:
+        cursor = db.get_cursor()
+
+        # Query for properties
+        query_properties = """
+            SELECT 
+                property_id AS propertyId, 
+                name AS propertyName, 
+                address,
+                grossleasablearea as GLA,
+                yearopened,
+                latitude AS propertyLatitude, 
+                longitude AS propertyLongitude
+            FROM geo.tbglproperty
+            WHERE country_id = %s AND is_active = '1' AND is_deleted = '0'
+        """
+        cursor.execute(query_properties, (country_id,))
+        properties = cursor.fetchall()
+
+        return {
+            "properties": properties
+        }
+
+    except Exception as e:
+        print("🚨 Error in /getMallByCountryId endpoint:", str(e))
+        return JSONResponse(status_code=500, content={"error": str(e)})
 
 
 @app.get("/getState")
