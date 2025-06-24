@@ -1,0 +1,225 @@
+2025-06-24 10:38:58,967 - INFO - Fetching store data for mall_id=433
+2025-06-24 10:38:59,189 - INFO - Rows fetched: 204
+2025-06-24 10:38:59,189 - ERROR - Exception in /getStores endpoint: 0
+2025-06-24 10:43:02,626 - INFO - Fetching store data for mall_id=433
+2025-06-24 10:43:02,755 - INFO - Rows fetched: 204
+2025-06-24 10:43:02,755 - ERROR - Error processing row 0: RealDictRow({'categoryname': 'Anchors', 'subcategoryname': 'Departmental Store', 'storename': 'H & M INDIA', 'brandname': 'H & M INDIA'}) -> 0
+2025-06-24 10:43:02,755 - ERROR - Error processing row 1: RealDictRow({'categoryname': 'Anchors', 'subcategoryname': 'Departmental Store', 'storename': 'LIFESTYLE', 'brandname': 'LIFESTYLE'}) -> 0
+2025-06-24 10:43:02,755 - ERROR - Error processing row 2: RealDictRow({'categoryname': 'Anchors', 'subcategoryname': 'Departmental Store', 'storename': 'MARKS & SPENCER', 'brandname': 'MARKS & SPENCER'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 3: RealDictRow({'categoryname': 'Anchors', 'subcategoryname': 'Departmental Store', 'storename': 'MAX', 'brandname': 'MAX'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 4: RealDictRow({'categoryname': 'Anchors', 'subcategoryname': 'Departmental Store', 'storename': 'PANTALOONS', 'brandname': 'PANTALOONS'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 5: RealDictRow({'categoryname': 'Anchors', 'subcategoryname': 'Departmental Store', 'storename': 'SHOPPERS STOP', 'brandname': 'SHOPPERS STOP'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 6: RealDictRow({'categoryname': 'Books', 'subcategoryname': 'Books', 'storename': 'CROSSWORD', 'brandname': 'CROSSWORD'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 7: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'AMC-ACCESSORY & MOBILE CONCEPTS', 'brandname': 'AMC-ACCESSORY & MOBILE CONCEPTS'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 8: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'APTRONIX', 'brandname': 'APTRONIX'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 9: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'BAJAJ ELECTRONICS', 'brandname': 'BAJAJ ELECTRONICS'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 10: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'BOSE', 'brandname': 'BOSE'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 11: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'DYSON', 'brandname': 'DYSON'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 12: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'MOBIKINS', 'brandname': 'MOBIKINS'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 13: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'RELIANCE DIGITAL', 'brandname': 'RELIANCE DIGITAL'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 14: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'SAMSUNG', 'brandname': 'SAMSUNG'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 15: RealDictRow({'categoryname': 'Electronics & Telecommunications', 'subcategoryname': 'Electronics & Telecommunications', 'storename': 'SANGEETHA MOBILES', 'brandname': 'SANGEETHA MOBILES'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 16: RealDictRow({'categoryname': 'Entertainment', 'subcategoryname': 'Entertainment', 'storename': 'DIALOGUE IN THE DARK', 'brandname': 'DIALOGUE IN THE DARK'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 17: RealDictRow({'categoryname': 'Entertainment', 'subcategoryname': 'Entertainment', 'storename': 'FUNCITY', 'brandname': 'FUNCITY'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 18: RealDictRow({'categoryname': 'Entertainment', 'subcategoryname': 'Entertainment', 'storename': 'SMAAASH AND THE PUB EXCHANGE', 'brandname': 'SMAAASH AND THE PUB EXCHANGE'}) -> 0
+2025-06-24 10:43:02,756 - ERROR - Error processing row 19: RealDictRow({'categoryname': 'Entertainment', 'subcategoryname': 'Entertainment', 'storename': 'THE GAME', 'brandname': 'THE GAME'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 20: RealDictRow({'categoryname': 'Entertainment', 'subcategoryname': 'Entertainment', 'storename': 'TIMEZONE PLAY N LEARN', 'brandname': 'TIMEZONE PLAY N LEARN'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 21: RealDictRow({'categoryname': 'Eyewear', 'subcategoryname': 'Eyewear', 'storename': 'GKB OPTICALS', 'brandname': 'GKB OPTICALS'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 22: RealDictRow({'categoryname': 'Eyewear', 'subcategoryname': 'Eyewear', 'storename': 'LENSKART', 'brandname': 'LENSKART'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 23: RealDictRow({'categoryname': 'Eyewear', 'subcategoryname': 'Eyewear', 'storename': 'SUNGLASS HUT', 'brandname': 'SUNGLASS HUT'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 24: RealDictRow({'categoryname': 'Eyewear', 'subcategoryname': 'Eyewear', 'storename': 'VISION EXPRESS', 'brandname': 'VISION EXPRESS'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 25: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Kids', 'storename': 'MOTHER CARE', 'brandname': 'MOTHER CARE'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 26: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'MANYAVAR', 'brandname': 'MANYAVAR'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 27: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'ARROW', 'brandname': 'ARROW'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 28: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'BLACKBERRYS', 'brandname': 'BLACKBERRYS'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 29: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'CELIO', 'brandname': 'CELIO'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 30: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'INDIAN TERRAIN', 'brandname': 'INDIAN TERRAIN'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 31: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'JACK N JONES', 'brandname': 'JACK N JONES'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 32: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'LOUIS PHILIPPE', 'brandname': 'LOUIS PHILIPPE'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 33: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'MUFTI', 'brandname': 'MUFTI'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 34: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'NAUTICA', 'brandname': 'NAUTICA'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 35: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'RARE RABBIT', 'brandname': 'RARE RABBIT'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 36: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'RAYMOND', 'brandname': 'RAYMOND'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 37: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'THE RAYMOND SHOP', 'brandname': 'THE RAYMOND SHOP'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 38: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Men's", 'storename': 'ZODIAC', 'brandname': 'ZODIAC'}) -> 0
+2025-06-24 10:43:02,757 - ERROR - Error processing row 39: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'THE COLLECTIVE EXPRESS', 'brandname': 'THE COLLECTIVE EXPRESS'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 40: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'FABINDIA', 'brandname': 'FABINDIA'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 41: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'JAYPORE', 'brandname': 'JAYPORE'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 42: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'MANYAVAR', 'brandname': 'MANYAVAR'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 43: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'MEBAZ', 'brandname': 'MEBAZ'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 44: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'AEROPOSTALE', 'brandname': 'AEROPOSTALE'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 45: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'AMERICAN EAGLE', 'brandname': 'AMERICAN EAGLE'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 46: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'ARMANI EXCHANGE', 'brandname': 'ARMANI EXCHANGE'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 47: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'BEING HUMAN', 'brandname': 'BEING HUMAN'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 48: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'CALVIN KLEIN JEANS', 'brandname': 'CALVIN KLEIN JEANS'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 49: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'ED HARDY', 'brandname': 'ED HARDY'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 50: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'GANT', 'brandname': 'GANT'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 51: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'GUESS', 'brandname': 'GUESS'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 52: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'LACOSTE', 'brandname': 'LACOSTE'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 53: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'LEVIS', 'brandname': 'LEVIS'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 54: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'PEPE JEANS', 'brandname': 'PEPE JEANS'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 55: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'SHANTANU & NIKHIL', 'brandname': 'SHANTANU & NIKHIL'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 56: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'SPYKAR', 'brandname': 'SPYKAR'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 57: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'SUPERDRY', 'brandname': 'SUPERDRY'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 58: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'TOMMY HILFIGER', 'brandname': 'TOMMY HILFIGER'}) -> 0
+2025-06-24 10:43:02,758 - ERROR - Error processing row 59: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'TRUE RELIGION', 'brandname': 'TRUE RELIGION'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 60: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'UNITED COLOURS OF BENETTON', 'brandname': 'UNITED COLOURS OF BENETTON'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 61: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'U.S. POLO ASSN.', 'brandname': 'U.S. POLO ASSN.'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 62: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': 'Fashion-Unisex', 'storename': 'WILLS LIFESTYLE', 'brandname': 'WILLS LIFESTYLE'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 63: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'BIBA', 'brandname': 'BIBA'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 64: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'GLOBAL DESI', 'brandname': 'GLOBAL DESI'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 65: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'GO COLORS', 'brandname': 'GO COLORS'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 66: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'JASHN', 'brandname': 'JASHN'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 67: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'RELIANCE TRENDS', 'brandname': 'RELIANCE TRENDS'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 68: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'SOCH', 'brandname': 'SOCH'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 69: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'W', 'brandname': 'W'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 70: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'AND', 'brandname': 'AND'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 71: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'AND & AND GIRLS', 'brandname': 'AND & AND GIRLS'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 72: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'CHEMISTRY', 'brandname': 'CHEMISTRY'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 73: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'COVER STORY', 'brandname': 'COVER STORY'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 74: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'FOREVER 21', 'brandname': 'FOREVER 21'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 75: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'FOREVER NEW', 'brandname': 'FOREVER NEW'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 76: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'ONLY', 'brandname': 'ONLY'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 77: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'RAREISM', 'brandname': 'RAREISM'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 78: RealDictRow({'categoryname': 'Fashion', 'subcategoryname': "Fashion-Women's", 'storename': 'VEROMODA', 'brandname': 'VEROMODA'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 79: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'ACCESSORIZE', 'brandname': 'ACCESSORIZE'}) -> 0
+2025-06-24 10:43:02,759 - ERROR - Error processing row 80: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'ALDO ACCESSORIES', 'brandname': 'ALDO ACCESSORIES'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 81: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'BAGGIT', 'brandname': 'BAGGIT'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 82: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'DA MILANO', 'brandname': 'DA MILANO'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 83: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'HAMSTER LONDON', 'brandname': 'HAMSTER LONDON'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 84: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'HIDESIGN', 'brandname': 'HIDESIGN'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 85: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'KAMPANERO', 'brandname': 'KAMPANERO'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 86: RealDictRow({'categoryname': 'Fashion Accessories', 'subcategoryname': 'Fashion Accessories', 'storename': 'NICOBAR', 'brandname': 'NICOBAR'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 87: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Chocolates & Confectioneries', 'storename': 'NEUTRIX AND TRIUMPH', 'brandname': 'NEUTRIX AND TRIUMPH'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 88: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'KEVENTERS', 'brandname': 'KEVENTERS'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 89: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': '4 SEASON', 'brandname': '4 SEASON'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 90: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'CALIFORNIA BURRITO', 'brandname': 'CALIFORNIA BURRITO'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 91: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'DOMINOS', 'brandname': 'DOMINOS'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 92: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'GABRU DI CHAAP', 'brandname': 'GABRU DI CHAAP'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 93: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': "HALDIRAM'S NAGPUR", 'brandname': "HALDIRAM'S NAGPUR"}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 94: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'INDIAN TADKA', 'brandname': 'INDIAN TADKA'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 95: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': "KRITUNGA - THE PALEGAR'S CUISINE", 'brandname': "KRITUNGA - THE PALEGAR'S CUISINE"}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 96: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'PARADISE BIRYANI', 'brandname': 'PARADISE BIRYANI'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 97: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'POPEYES', 'brandname': 'POPEYES'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 98: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'RAYALSEEMA RUCHULU', 'brandname': 'RAYALSEEMA RUCHULU'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 99: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'TACO BELL', 'brandname': 'TACO BELL'}) -> 0
+2025-06-24 10:43:02,760 - ERROR - Error processing row 100: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'WOW CHICKEN', 'brandname': 'WOW CHICKEN'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 101: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'WOW CHINA', 'brandname': 'WOW CHINA'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 102: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'WOW MOMOS', 'brandname': 'WOW MOMOS'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 103: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'BURGER KING', 'brandname': 'BURGER KING'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 104: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'KFC', 'brandname': 'KFC'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 105: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': "MCDONALD'S", 'brandname': "MCDONALD'S"}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 106: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Food Court', 'storename': 'SUBWAY', 'brandname': 'SUBWAY'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 107: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'CAFE COFFEE DAY', 'brandname': 'CAFE COFFEE DAY'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 108: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'CHAI POINT', 'brandname': 'CHAI POINT'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 109: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'STARBUCKS # A TATA ALLIANCE', 'brandname': 'STARBUCKS # A TATA ALLIANCE'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 110: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'THIRD WAVE COFFEE', 'brandname': 'THIRD WAVE COFFEE'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 111: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'TIM HORTONS', 'brandname': 'TIM HORTONS'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 112: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'BATEEL', 'brandname': 'BATEEL'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 113: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'COLD STONE CREAMERY', 'brandname': 'COLD STONE CREAMERY'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 114: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'CREAM STONE CONCEPTS', 'brandname': 'CREAM STONE CONCEPTS'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 115: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'CREAM STONE CREATIONS', 'brandname': 'CREAM STONE CREATIONS'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 116: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'THICK SHAKE FACTORY', 'brandname': 'THICK SHAKE FACTORY'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 117: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'ABSOLUTE BARBEQUE', 'brandname': 'ABSOLUTE BARBEQUE'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 118: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'CAFE DELHI HEIGHTS', 'brandname': 'CAFE DELHI HEIGHTS'}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 119: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': "CHILI'S", 'brandname': "CHILI'S"}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 120: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': "CHUTNEY'S", 'brandname': "CHUTNEY'S"}) -> 0
+2025-06-24 10:43:02,761 - ERROR - Error processing row 121: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'FOO', 'brandname': 'FOO'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 122: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'FUSION 9 & AMNESIA', 'brandname': 'FUSION 9 & AMNESIA'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 123: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'FUSION 9 AMNESIA AND INSOMNIA', 'brandname': 'FUSION 9 AMNESIA AND INSOMNIA'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 124: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'KENNY ROGERS ROASTERS', 'brandname': 'KENNY ROGERS ROASTERS'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 125: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'PIZZA HUT', 'brandname': 'PIZZA HUT'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 126: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'PUNJAB BISTRO', 'brandname': 'PUNJAB BISTRO'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 127: RealDictRow({'categoryname': 'Food & Beverages', 'subcategoryname': 'Restaurants', 'storename': 'PUNJAB GRILL', 'brandname': 'PUNJAB GRILL'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 128: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'ALDO', 'brandname': 'ALDO'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 129: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'BIRKENSTOCK', 'brandname': 'BIRKENSTOCK'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 130: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'BUGATTI & BAGATT', 'brandname': 'BUGATTI & BAGATT'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 131: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'CENTRO GRANDE', 'brandname': 'CENTRO GRANDE'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 132: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'CHARLES & KEITH', 'brandname': 'CHARLES & KEITH'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 133: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'CLARKS', 'brandname': 'CLARKS'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 134: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'CROCS', 'brandname': 'CROCS'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 135: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'FIZZY GOBLET', 'brandname': 'FIZZY GOBLET'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 136: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'HUSH PUPPIES', 'brandname': 'HUSH PUPPIES'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 137: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'INC.5', 'brandname': 'INC.5'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 138: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'MELISSA', 'brandname': 'MELISSA'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 139: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'MOCHI', 'brandname': 'MOCHI'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 140: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'NEEMANS', 'brandname': 'NEEMANS'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 141: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'ONITSUKA TIGER', 'brandname': 'ONITSUKA TIGER'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 142: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'ROCIA', 'brandname': 'ROCIA'}) -> 0
+2025-06-24 10:43:02,762 - ERROR - Error processing row 143: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'ROSSO BRUNELLO', 'brandname': 'ROSSO BRUNELLO'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 144: RealDictRow({'categoryname': 'Footwear', 'subcategoryname': 'Footwear', 'storename': 'STEVE MADDEN', 'brandname': 'STEVE MADDEN'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 145: RealDictRow({'categoryname': 'Home', 'subcategoryname': 'Home', 'storename': 'HOME TOWN EXPRESS', 'brandname': 'HOME TOWN EXPRESS'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 146: RealDictRow({'categoryname': 'Home', 'subcategoryname': 'Home', 'storename': 'U & US', 'brandname': 'U & US'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 147: RealDictRow({'categoryname': 'Home Decor', 'subcategoryname': 'Home Decor', 'storename': 'CHUMBAK', 'brandname': 'CHUMBAK'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 148: RealDictRow({'categoryname': 'Hypermarket', 'subcategoryname': 'Hypermarket', 'storename': 'SMART BAZAAR', 'brandname': 'SMART BAZAAR'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 149: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'BLUESTONE', 'brandname': 'BLUESTONE'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 150: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'CARATLANE', 'brandname': 'CARATLANE'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 151: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'ETHOS', 'brandname': 'ETHOS'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 152: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'FOSSIL', 'brandname': 'FOSSIL'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 153: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'KAMAL WATCH COMPANY', 'brandname': 'KAMAL WATCH COMPANY'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 154: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'KISNA DIAMOND & GOLD JEWELLERY', 'brandname': 'KISNA DIAMOND & GOLD JEWELLERY'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 155: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'KRISHNA PEARLS', 'brandname': 'KRISHNA PEARLS'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 156: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'MANGATRAI', 'brandname': 'MANGATRAI'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 157: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'MIA', 'brandname': 'MIA'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 158: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'ORRA', 'brandname': 'ORRA'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 159: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'RADO', 'brandname': 'RADO'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 160: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'RAMESH WATCH CO.', 'brandname': 'RAMESH WATCH CO.'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 161: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'SWAROVSKI', 'brandname': 'SWAROVSKI'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 162: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'TANISHQ', 'brandname': 'TANISHQ'}) -> 0
+2025-06-24 10:43:02,763 - ERROR - Error processing row 163: RealDictRow({'categoryname': 'Jewellery & Watches', 'subcategoryname': 'Jewellery & Watches', 'storename': 'WORLD OF TITAN AND  HELIOS', 'brandname': 'WORLD OF TITAN AND  HELIOS'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 164: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'ADIDAS', 'brandname': 'ADIDAS'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 165: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'ADIDAS ORIGINALS', 'brandname': 'ADIDAS ORIGINALS'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 166: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'DECATHLON', 'brandname': 'DECATHLON'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 167: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'NIKE', 'brandname': 'NIKE'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 168: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'PUMA', 'brandname': 'PUMA'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 169: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'REEBOK', 'brandname': 'REEBOK'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 170: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'SKECHERS', 'brandname': 'SKECHERS'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 171: RealDictRow({'categoryname': 'Lifestyle & Fitness', 'subcategoryname': 'Lifestyle & Fitness', 'storename': 'UNDER ARMOUR', 'brandname': 'UNDER ARMOUR'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 172: RealDictRow({'categoryname': 'Lingerie & Sleepwear', 'subcategoryname': 'Lingerie & Sleepwear', 'storename': 'JOCKEY', 'brandname': 'JOCKEY'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 173: RealDictRow({'categoryname': 'Lingerie & Sleepwear', 'subcategoryname': 'Lingerie & Sleepwear', 'storename': 'TRIUMPH', 'brandname': 'TRIUMPH'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 174: RealDictRow({'categoryname': 'Multiplex', 'subcategoryname': 'Multiplex', 'storename': 'PVR', 'brandname': 'PVR'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 175: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'BATH & BODY WORKS', 'brandname': 'BATH & BODY WORKS'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 176: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'FOREST ESSENTIALS', 'brandname': 'FOREST ESSENTIALS'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 177: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'HEALTH & GLOW', 'brandname': 'HEALTH & GLOW'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 178: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'INNISFREE', 'brandname': 'INNISFREE'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 179: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'KAYA SKIN CLINIC', 'brandname': 'KAYA SKIN CLINIC'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 180: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'MAC', 'brandname': 'MAC'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 181: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'MAMAEARTH', 'brandname': 'MAMAEARTH'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 182: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'NEW U', 'brandname': 'NEW U'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 183: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'NYKAA LUXE', 'brandname': 'NYKAA LUXE'}) -> 0
+2025-06-24 10:43:02,764 - ERROR - Error processing row 184: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'PARCOS', 'brandname': 'PARCOS'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 185: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'SEPHORA', 'brandname': 'SEPHORA'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 186: RealDictRow({'categoryname': 'Perfumes & Cosmetics', 'subcategoryname': 'Perfumes & Cosmetics', 'storename': 'THE BODY SHOP', 'brandname': 'THE BODY SHOP'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 187: RealDictRow({'categoryname': 'Services', 'subcategoryname': 'Salon', 'storename': 'BOUNCE', 'brandname': 'BOUNCE'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 188: RealDictRow({'categoryname': 'Services', 'subcategoryname': 'Salon', 'storename': 'ENVI', 'brandname': 'ENVI'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 189: RealDictRow({'categoryname': 'Services', 'subcategoryname': 'Salon', 'storename': "KAPIL'S SALON", 'brandname': "KAPIL'S SALON"}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 190: RealDictRow({'categoryname': 'Services', 'subcategoryname': 'Spa', 'storename': 'GANGA SPA', 'brandname': 'GANGA SPA'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 191: RealDictRow({'categoryname': 'Services', 'subcategoryname': 'Spa', 'storename': 'KAYA SKIN CLINIC', 'brandname': 'KAYA SKIN CLINIC'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 192: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'ARCHIES', 'brandname': 'ARCHIES'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 193: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'HAMLEYS', 'brandname': 'HAMLEYS'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 194: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'HAMLEYS & HAMLEYS PLAY', 'brandname': 'HAMLEYS & HAMLEYS PLAY'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 195: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'LATT LIV', 'brandname': 'LATT LIV'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 196: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'MINISO', 'brandname': 'MINISO'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 197: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'SUPER 99', 'brandname': 'SUPER 99'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 198: RealDictRow({'categoryname': 'Toys,Gifts,Cards & Novelties', 'subcategoryname': 'Toys.Gifts,Cards & Novelties', 'storename': 'WILLIAM PENN', 'brandname': 'WILLIAM PENN'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 199: RealDictRow({'categoryname': 'Travel & Leisure', 'subcategoryname': 'Travel & Leisure', 'storename': 'BAGZONE', 'brandname': 'BAGZONE'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 200: RealDictRow({'categoryname': 'Travel & Leisure', 'subcategoryname': 'Travel & Leisure', 'storename': 'BRICS & HELVETICA', 'brandname': 'BRICS & HELVETICA'}) -> 0
+2025-06-24 10:43:02,765 - ERROR - Error processing row 201: RealDictRow({'categoryname': 'Travel & Leisure', 'subcategoryname': 'Travel & Leisure', 'storename': 'IT LUGGAGE', 'brandname': 'IT LUGGAGE'}) -> 0
+2025-06-24 10:43:02,766 - ERROR - Error processing row 202: RealDictRow({'categoryname': 'Travel & Leisure', 'subcategoryname': 'Travel & Leisure', 'storename': 'SAMSONITE', 'brandname': 'SAMSONITE'}) -> 0
+2025-06-24 10:43:02,766 - ERROR - Error processing row 203: RealDictRow({'categoryname': 'Travel & Leisure', 'subcategoryname': 'Travel & Leisure', 'storename': 'WILDCRAFT', 'brandname': 'WILDCRAFT'}) -> 0
+2025-06-24 10:44:48,722 - INFO - Fetching store data for mall_id=433
+2025-06-24 10:44:48,727 - ERROR - Exception in /getStores endpoint: TypeError("Database.get_cursor() got an unexpected keyword argument 'cursor_factory'")
+Traceback (most recent call last):
+  File "D:\Git\Geo-Mall-API\api.py", line 290, in get_store_by_mallid
+    cursor = db.get_cursor(cursor_factory=RealDictCursor)
+TypeError: Database.get_cursor() got an unexpected keyword argument 'cursor_factory'
+
+2025-06-24 10:44:50,490 - INFO - Fetching store data for mall_id=433
+2025-06-24 10:44:50,491 - ERROR - Exception in /getStores endpoint: TypeError("Database.get_cursor() got an unexpected keyword argument 'cursor_factory'")
+Traceback (most recent call last):
+  File "D:\Git\Geo-Mall-API\api.py", line 290, in get_store_by_mallid
+    cursor = db.get_cursor(cursor_factory=RealDictCursor)
+TypeError: Database.get_cursor() got an unexpected keyword argument 'cursor_factory'
+
+2025-06-24 10:46:57,403 - INFO - Fetching store data for mall_id=433
+2025-06-24 10:46:57,490 - INFO - Rows fetched: 204

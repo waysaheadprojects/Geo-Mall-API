@@ -9,7 +9,21 @@ from Models.loginModel import LoginRequest
 from jose import JWTError
 import logging
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from collections import defaultdict
+from fastapi.encoders import jsonable_encoder
+import traceback
+from psycopg2.extras import RealDictCursor
 
+
+import logging
+
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,  # Use DEBUG for more detailed logs
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='app.log',  # Optional: logs to file
+    filemode='a'
+)
 
 
 # pdb.set_trace()
@@ -268,16 +282,16 @@ def get_mall(city_id: int = Query(..., description="City ID to filter states and
 
 
 @app.get("/getStores")
-def get_store_by_mallid(mall_id: int = Query(..., description="get store data by mall id")):
+def get_store_by_mallid(mall_id: int = Query(..., description="Get store data by mall ID")):
     try:
+        logger.info(f"Fetching store data for mall_id={mall_id}")
         cursor = db.get_cursor()
 
-        # Query for properties
-        query_properties = """
-           SELECT 
-                s.StoreName,
+        query = """
+            SELECT 
                 c.CategoryName,
                 sc.SubCategoryName,
+                s.StoreName,
                 b.BrandName
             FROM geo.tbglstore s
             INNER JOIN geo.tbms_category c ON s.category_ID = c.CategoryID
@@ -285,14 +299,46 @@ def get_store_by_mallid(mall_id: int = Query(..., description="get store data by
             INNER JOIN geo.tbglbrand b ON s.BrandID = b.BrandID
             WHERE s.mall_id = %s AND s.is_active = '1' AND s.is_deleted = '0'
         """
-        cursor.execute(query_properties, (mall_id,))
-        properties = cursor.fetchall()
+        cursor.execute(query, (mall_id,))
+        rows = cursor.fetchall()
+        logger.info(f"Rows fetched: {len(rows)}")
 
-        return {
-            "stores": properties
-        }
+        nested_data = defaultdict(lambda: defaultdict(list))
+
+        for i, row in enumerate(rows):
+            try:
+                category = row['categoryname']
+                subcategory = row['subcategoryname']
+                store = {
+                    "StoreName": row['storename'],
+                    "BrandName": row['brandname']
+                }
+                nested_data[category][subcategory].append(store)
+            except Exception as row_error:
+                logger.error(f"Error processing row {i}: {row} -> {str(row_error)}")
+
+        result = []
+        for category, subcats in nested_data.items():
+            subcategory_list = []
+            for subcat, stores in subcats.items():
+                subcategory_list.append({
+                    "SubCategoryName": subcat,
+                    "Stores": stores
+                })
+            result.append({
+                "CategoryName": category,
+                "SubCategories": subcategory_list
+            })
+
+        return {"stores": jsonable_encoder(result)}
 
     except Exception as e:
-        print("🚨 Error in /getstorebymall endpoint:", str(e))
-        return JSONResponse(status_code=500, content={"error": str(e)})
-   
+        logger.error(f"Exception in /getStores endpoint: {repr(e)}")
+        return JSONResponse(status_code=500, content={"error": "Internal server error"})
+
+    finally:
+        try:
+            if cursor:
+                cursor.close()
+        except:
+            pass
