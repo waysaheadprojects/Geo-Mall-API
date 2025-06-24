@@ -125,7 +125,7 @@ def verify_token_endpoint(payload=Depends(verify_token)):
 def get_country():
     try:
         cursor = db.get_cursor()
-        cursor.execute("SELECT country_id , country_name , latitude , longitude FROM  geo.tbglcountry")
+        cursor.execute("SELECT country_id , country_name , latitude , longitude , is_active FROM  geo.tbglcountry where is_deleted = '0'")
         rows = cursor.fetchall()
         return {"data": rows}
     except Exception as e:
@@ -174,9 +174,10 @@ def get_state(country_id: int = Query(..., description="Country ID to filter sta
                 province_id AS provinceId, 
                 name AS stateName, 
                 latitude AS stateLatitude, 
-                longitude AS stateLongitude
+                longitude AS stateLongitude,
+                is_active
             FROM geo.tbglprovinces
-            WHERE country_id = %s AND is_active = '1' AND is_deleted = '0'
+            WHERE country_id = %s AND is_deleted = '0'
         """
         cursor.execute(query_states, (country_id,))
         states = cursor.fetchall()
@@ -208,7 +209,7 @@ def get_state(country_id: int = Query(..., description="Country ID to filter sta
     
 
 @app.get("/getCity")
-def get_state(state_id: int = Query(..., description="State ID to filter states and properties")):
+def get_city(state_id: int = Query(..., description="State ID to filter states and properties")):
     try:
         cursor = db.get_cursor()
 
@@ -218,9 +219,10 @@ def get_state(state_id: int = Query(..., description="State ID to filter states 
                 city_id AS cityId, 
                 name AS cityName, 
                 latitude , 
-                longitude
+                longitude,
+                is_active
             FROM geo.tbglcity
-            WHERE province_id = %s AND is_active = '1' AND is_deleted = '0'
+            WHERE province_id = %s AND is_deleted = '0'
         """
         cursor.execute(query_city, (state_id,))
         city = cursor.fetchall()
