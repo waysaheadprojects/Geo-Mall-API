@@ -125,7 +125,7 @@ def verify_token_endpoint(payload=Depends(verify_token)):
 def get_country():
     try:
         cursor = db.get_cursor()
-        cursor.execute("SELECT country_id , country_name , latitude , longitude , is_active FROM  geo.tbglcountry where is_deleted = '0'")
+        cursor.execute("SELECT country_id , country_name , latitude , longitude , is_active FROM  geo.tbglcountry where is_deleted = '0' ORDER BY is_active DESC")
         rows = cursor.fetchall()
         return {"data": rows}
     except Exception as e:
