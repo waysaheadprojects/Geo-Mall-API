@@ -1,17 +1,15 @@
 import os
 import psycopg2
+from psycopg2 import pool
+from psycopg2.extras import RealDictCursor
 from dotenv import load_dotenv
 import traceback
-from psycopg2.extras import RealDictCursor 
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
 
 class Database:
     def __init__(self):
-        self.connection = None
-
-    def connect(self):
         try:
             host = os.getenv("DB_HOST")
             port = os.getenv("DB_PORT")
@@ -19,30 +17,33 @@ class Database:
             user = os.getenv("DB_USER")
             password = os.getenv("DB_PASSWORD")
 
-            print("🔍 Connecting to DB with:")
-            print(f"Host={host}, Port={port}, DB={database}, User={user}")
-
-            self.connection = psycopg2.connect(
+            print("🔍 Initializing PostgreSQL Connection Pool")
+            self.connection_pool = psycopg2.pool.SimpleConnectionPool(
+                minconn=1,
+                maxconn=100,  # adjust based on load
                 host=host,
                 port=port,
                 database=database,
                 user=user,
                 password=password
             )
-            print("✅ PostgreSQL database connected successfully")
+            if self.connection_pool:
+                print("✅ Connection Pool created successfully")
         except Exception as e:
-            print("❌ Failed to connect to the database:", str(e))
+            print("❌ Failed to initialize connection pool:", str(e))
             traceback.print_exc()
+            self.connection_pool = None
 
-    def get_cursor(self):
-        if self.connection is None:
-            self.connect()
-        if self.connection:
-            return self.connection.cursor(cursor_factory=RealDictCursor)
-        else:
-            raise Exception("🔌 Database connection not available.")
+    def get_connection(self):
+        if not self.connection_pool:
+            raise Exception("🔌 Connection pool not initialized.")
+        return self.connection_pool.getconn()
 
-    def close(self):
-        if self.connection:
-            self.connection.close()
-            print("🔒 PostgreSQL connection closed.")
+    def put_connection(self, conn):
+        if self.connection_pool and conn:
+            self.connection_pool.putconn(conn)
+
+    def close_all(self):
+        if self.connection_pool:
+            self.connection_pool.closeall()
+            print("🔒 All connections closed.")
