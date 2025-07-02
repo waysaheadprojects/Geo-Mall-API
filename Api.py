@@ -223,7 +223,11 @@ def get_store_by_mallid(mall_id: int = Query(...)):
     try:
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("""
-            SELECT c.CategoryName, sc.SubCategoryName, s.StoreName, b.BrandName
+            SELECT 
+                c.CategoryName,
+                sc.SubCategoryName,
+                s.StoreName,
+                b.BrandName
             FROM geo.tbglstore s
             JOIN geo.tbms_category c ON s.category_ID = c.CategoryID
             JOIN geo.tbms_subcategory sc ON s.sub_category_ID = sc.SubCategoryID
@@ -233,10 +237,19 @@ def get_store_by_mallid(mall_id: int = Query(...)):
         rows = cursor.fetchall()
 
         nested_data = defaultdict(lambda: defaultdict(list))
-        for row in rows:
-            nested_data[row["CategoryName"]][row["SubCategoryName"]].append({
-                "StoreName": row["StoreName"],
-                "BrandName": row["BrandName"]
+        for i, row in enumerate(rows):
+            category = row.get("CategoryName")
+            subcategory = row.get("SubCategoryName")
+            store_name = row.get("StoreName")
+            brand_name = row.get("BrandName")
+
+            if not all([category, subcategory, store_name, brand_name]):
+                logger.warning(f"Skipping incomplete row #{i}: {row}")
+                continue
+
+            nested_data[category][subcategory].append({
+                "StoreName": store_name,
+                "BrandName": brand_name
             })
 
         result = []
