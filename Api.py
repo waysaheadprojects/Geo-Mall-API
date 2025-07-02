@@ -217,55 +217,76 @@ def get_mall_by_city(city_id: int = Query(...)):
         return {"error": str(e)}
 
 @app.get("/getStores")
-def get_store_by_mallid(mall_id: int = Query(...)):
-    conn = db.get_connection()
+def get_store_by_mallid(mall_id: int = Query(..., description="Get store data for mall ID")):
+    conn = None
     cursor = None
     try:
+        logger.info(f"Fetching store data for mall_id={mall_id}")
+        
+        # Get a connection from the pool
+        conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("""
+
+        query = """
             SELECT 
                 c.CategoryName,
                 sc.SubCategoryName,
                 s.StoreName,
                 b.BrandName
             FROM geo.tbglstore s
-            JOIN geo.tbms_category c ON s.category_ID = c.CategoryID
-            JOIN geo.tbms_subcategory sc ON s.sub_category_ID = sc.SubCategoryID
-            JOIN geo.tbglbrand b ON s.BrandID = b.BrandID
+            INNER JOIN geo.tbms_category c ON s.category_ID = c.CategoryID
+            INNER JOIN geo.tbms_subcategory sc ON s.sub_category_ID = sc.SubCategoryID
+            INNER JOIN geo.tbglbrand b ON s.BrandID = b.BrandID
             WHERE s.mall_id = %s AND s.is_active = '1' AND s.is_deleted = '0'
-        """, (mall_id,))
+        """
+        cursor.execute(query, (mall_id,))
         rows = cursor.fetchall()
+        logger.info(f"Rows fetched: {len(rows)}")
 
         nested_data = defaultdict(lambda: defaultdict(list))
+
         for i, row in enumerate(rows):
-            category = row.get("CategoryName")
-            subcategory = row.get("SubCategoryName")
-            store_name = row.get("StoreName")
-            brand_name = row.get("BrandName")
+            try:
+                # Use .get() to avoid KeyError
+                category = row.get('CategoryName')
+                subcategory = row.get('SubCategoryName')
+                store_name = row.get('StoreName')
+                brand_name = row.get('BrandName')
 
-            if not all([category, subcategory, store_name, brand_name]):
-                logger.warning(f"Skipping incomplete row #{i}: {row}")
-                continue
+                if not all([category, subcategory, store_name, brand_name]):
+                    logger.warning(f"Skipping incomplete row {i}: {row}")
+                    continue
 
-            nested_data[category][subcategory].append({
-                "StoreName": store_name,
-                "BrandName": brand_name
-            })
+                store = {
+                    "StoreName": store_name,
+                    "BrandName": brand_name
+                }
+                nested_data[category][subcategory].append(store)
+
+            except Exception as row_error:
+                logger.error(f"Error processing row {i}: {row} -> {str(row_error)}")
 
         result = []
-        for cat, subcats in nested_data.items():
+        for category, subcats in nested_data.items():
+            subcategory_list = []
+            for subcat, stores in subcats.items():
+                subcategory_list.append({
+                    "SubCategoryName": subcat,
+                    "Stores": stores
+                })
             result.append({
-                "CategoryName": cat,
-                "SubCategories": [
-                    {"SubCategoryName": subcat, "Stores": stores}
-                    for subcat, stores in subcats.items()
-                ]
+                "CategoryName": category,
+                "SubCategories": subcategory_list
             })
 
         return {"stores": jsonable_encoder(result)}
+
     except Exception as e:
-        logger.error(f"Error in /getStores: {e}")
-        return {"error": str(e)}
+        logger.error(f"Exception in /getStores endpoint: {repr(e)}")
+        return JSONResponse(status_code=500, content={"error": "Internal server error"})
+
     finally:
-        if cursor: cursor.close()
-        db.put_connection(conn)
+        if cursor:
+            cursor.close()
+        if conn:
+            db.put_connection(conn)
