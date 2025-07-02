@@ -217,13 +217,13 @@ def get_mall_by_city(city_id: int = Query(...)):
         return {"error": str(e)}
 
 @app.get("/getStores")
-def get_store_by_mallid(mall_id: int = Query(..., description="Get store data for mall ID")):
+def get_store_by_mallid(mall_id: int = Query(..., description="Get store data by mall ID")):
     conn = None
     cursor = None
     try:
         logger.info(f"Fetching store data for mall_id={mall_id}")
         
-        # Get a connection from the pool
+        # 🔑 Use connection pool correctly:
         conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
 
@@ -247,22 +247,13 @@ def get_store_by_mallid(mall_id: int = Query(..., description="Get store data fo
 
         for i, row in enumerate(rows):
             try:
-                # Use .get() to avoid KeyError
-                category = row.get('CategoryName')
-                subcategory = row.get('SubCategoryName')
-                store_name = row.get('StoreName')
-                brand_name = row.get('BrandName')
-
-                if not all([category, subcategory, store_name, brand_name]):
-                    logger.warning(f"Skipping incomplete row {i}: {row}")
-                    continue
-
+                category = row['CategoryName']
+                subcategory = row['SubCategoryName']
                 store = {
-                    "StoreName": store_name,
-                    "BrandName": brand_name
+                    "StoreName": row['StoreName'],
+                    "BrandName": row['BrandName']
                 }
                 nested_data[category][subcategory].append(store)
-
             except Exception as row_error:
                 logger.error(f"Error processing row {i}: {row} -> {str(row_error)}")
 
