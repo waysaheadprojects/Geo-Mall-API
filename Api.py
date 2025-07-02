@@ -7,6 +7,7 @@ from datetime import timedelta
 from Models.loginModel import LoginRequest
 from fastapi.encoders import jsonable_encoder
 from collections import defaultdict
+from psycopg2.extras import RealDictCursor
 import logging
 
 # Logging config
@@ -38,7 +39,7 @@ def get_users():
     cursor = None
     try:
         conn = db.get_connection()
-        cursor = conn.cursor(cursor_factory=None)
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("SELECT * FROM tb_dim_user")
         rows = cursor.fetchall()
         return {"data": rows}
@@ -55,12 +56,12 @@ def login(request_data: LoginRequest, request: Request):
     cursor = None
     try:
         conn = db.get_connection()
-        cursor = conn.cursor(cursor_factory=None)
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
 
         cursor.execute("SELECT * FROM tb_dim_user WHERE email = %s", (request_data.email,))
         user = cursor.fetchone()
 
-        if not user or request_data.password != user[2]:  # adjust index based on your columns!
+        if not user or request_data.password != user["password"]:
             raise HTTPException(status_code=401, detail="Invalid email or password")
 
         token = create_access_token(
@@ -74,14 +75,14 @@ def login(request_data: LoginRequest, request: Request):
             VALUES (%s, %s, %s, %s, %s, %s, %s)
         """
         cursor.execute(insert_query, (
-            user[0], request_data.email, token, "Success", "Login successful",
+            user["user_key"], request_data.email, token, "Success", "Login successful",
             request.client.host, request.headers.get("user-agent")
         ))
         conn.commit()
 
         return {
             "access_token": token,
-            "user": dict(zip([desc[0] for desc in cursor.description], user)),
+            "user": user,
             "token_type": "bearer"
         }
     except HTTPException:
@@ -120,7 +121,12 @@ def get_country():
     try:
         conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT country_id, country_name, latitude, longitude, is_active FROM geo.tbglcountry WHERE is_deleted = '0' ORDER BY is_active DESC")
+        cursor.execute("""
+            SELECT country_id, country_name, latitude, longitude, is_active
+            FROM geo.tbglcountry
+            WHERE is_deleted = '0'
+            ORDER BY is_active DESC
+        """)
         rows = cursor.fetchall()
         return {"data": rows}
     except Exception as e:
