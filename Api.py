@@ -10,7 +10,7 @@ from collections import defaultdict
 from psycopg2.extras import RealDictCursor
 import logging
 
-# Logging config
+# Logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -22,7 +22,6 @@ logger = logging.getLogger(__name__)
 app = FastAPI()
 db = Database()
 
-# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -31,24 +30,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ----------- Endpoints ------------
+# ✅ Safe pattern template
+def run_query(query, params=None):
+    conn = db.get_connection()
+    cursor = None
+    try:
+        cursor = conn.cursor(cursor_factory=RealDictCursor)
+        cursor.execute(query, params)
+        rows = cursor.fetchall()
+        return rows
+    finally:
+        if cursor: cursor.close()
+        db.put_connection(conn)
+
 
 @app.get("/users")
 def get_users():
-    conn = None
-    cursor = None
     try:
-        conn = db.get_connection()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("SELECT * FROM tb_dim_user")
-        rows = cursor.fetchall()
+        rows = run_query("SELECT * FROM tb_dim_user")
         return {"data": rows}
     except Exception as e:
-        logger.error(f"🚨 Error in /users: {str(e)}")
+        logger.error(f"Error in /users: {e}")
         return {"error": str(e)}
-    finally:
-        if cursor: cursor.close()
-        if conn: db.put_connection(conn)
 
 @app.post("/login")
 def login(request_data: LoginRequest, request: Request):
@@ -69,26 +72,22 @@ def login(request_data: LoginRequest, request: Request):
             expires_delta=timedelta(minutes=60)
         )
 
-        insert_query = """
-            INSERT INTO tb_dim_user_login_logs 
+        cursor.execute("""
+            INSERT INTO tb_dim_user_login_logs
             (userid, email, login_token, status, reason, ip_address, user_agent)
             VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """
-        cursor.execute(insert_query, (
-            user["user_key"], request_data.email, token, "Success", "Login successful",
-            request.client.host, request.headers.get("user-agent")
+        """, (
+            user["user_key"], request_data.email, token, "Success",
+            "Login successful", request.client.host, request.headers.get("user-agent")
         ))
         conn.commit()
 
-        return {
-            "access_token": token,
-            "user": user,
-            "token_type": "bearer"
-        }
+        return {"access_token": token, "user": user, "token_type": "bearer"}
+
     except HTTPException:
         raise
     except Exception as e:
-        logger.error(f"🚨 Error in /login: {str(e)}")
+        logger.error(f"Error in /login: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
     finally:
         if cursor: cursor.close()
@@ -101,7 +100,7 @@ def verify_token_endpoint(payload=Depends(verify_token)):
     try:
         email = payload.get("sub")
         if not email:
-            raise HTTPException(status_code=401, detail="Invalid token payload")
+            raise HTTPException(status_code=401, detail="Invalid token")
 
         conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
@@ -116,144 +115,112 @@ def verify_token_endpoint(payload=Depends(verify_token)):
 
 @app.get("/getCountry")
 def get_country():
-    conn = None
-    cursor = None
     try:
-        conn = db.get_connection()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("""
+        rows = run_query("""
             SELECT country_id, country_name, latitude, longitude, is_active
             FROM geo.tbglcountry
             WHERE is_deleted = '0'
             ORDER BY is_active DESC
         """)
-        rows = cursor.fetchall()
         return {"data": rows}
     except Exception as e:
-        logger.error(f"🚨 Error in /getCountry: {str(e)}")
+        logger.error(f"Error in /getCountry: {e}")
         return {"error": str(e)}
-    finally:
-        if cursor: cursor.close()
-        if conn: db.put_connection(conn)
 
 @app.get("/getMallByCountryId")
 def get_mall_by_country(country_id: int = Query(...)):
-    conn = None
-    cursor = None
     try:
-        conn = db.get_connection()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("""
-            SELECT 
-                property_id AS propertyId, 
-                name AS propertyName, 
-                address,
-                grossleasablearea AS GLA,
-                yearopened,
-                latitude AS propertyLatitude, 
-                longitude AS propertyLongitude
+        rows = run_query("""
+            SELECT property_id AS propertyId, name AS propertyName, address,
+                   grossleasablearea AS GLA, yearopened,
+                   latitude AS propertyLatitude, longitude AS propertyLongitude
             FROM geo.tbglproperty
             WHERE country_id = %s AND is_active = '1' AND is_deleted = '0'
         """, (country_id,))
-        properties = cursor.fetchall()
-        return {"properties": properties}
+        return {"properties": rows}
     except Exception as e:
-        logger.error(f"🚨 Error in /getMallByCountryId: {str(e)}")
+        logger.error(f"Error in /getMallByCountryId: {e}")
         return {"error": str(e)}
-    finally:
-        if cursor: cursor.close()
-        if conn: db.put_connection(conn)
 
 @app.get("/getState")
 def get_state(country_id: int = Query(...)):
-    conn = None
+    conn = db.get_connection()
     cursor = None
     try:
-        conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
 
         cursor.execute("""
             SELECT province_id AS provinceId, name AS stateName, latitude, longitude, is_active
-            FROM geo.tbglprovinces
-            WHERE country_id = %s AND is_deleted = '0'
+            FROM geo.tbglprovinces WHERE country_id = %s AND is_deleted = '0'
         """, (country_id,))
         states = cursor.fetchall()
 
         cursor.execute("""
-            SELECT property_id AS propertyId, name AS propertyName, address, grossleasablearea AS GLA,
-                   yearopened, latitude AS propertyLatitude, longitude AS propertyLongitude
-            FROM geo.tbglproperty
-            WHERE country_id = %s AND is_active = '1' AND is_deleted = '0'
+            SELECT property_id AS propertyId, name AS propertyName, address,
+                   grossleasablearea AS GLA, yearopened,
+                   latitude AS propertyLatitude, longitude AS propertyLongitude
+            FROM geo.tbglproperty WHERE country_id = %s AND is_active = '1' AND is_deleted = '0'
         """, (country_id,))
         properties = cursor.fetchall()
 
         return {"states": states, "properties": properties}
+
     except Exception as e:
-        logger.error(f"🚨 Error in /getState: {str(e)}")
+        logger.error(f"Error in /getState: {e}")
         return {"error": str(e)}
     finally:
         if cursor: cursor.close()
-        if conn: db.put_connection(conn)
+        db.put_connection(conn)
 
 @app.get("/getCity")
 def get_city(state_id: int = Query(...)):
-    conn = None
+    conn = db.get_connection()
     cursor = None
     try:
-        conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
 
         cursor.execute("""
             SELECT city_id AS cityId, name AS cityName, latitude, longitude, is_active
-            FROM geo.tbglcity
-            WHERE province_id = %s AND is_deleted = '0'
+            FROM geo.tbglcity WHERE province_id = %s AND is_deleted = '0'
         """, (state_id,))
         cities = cursor.fetchall()
 
         cursor.execute("""
-            SELECT property_id AS propertyId, name AS propertyName, address, grossleasablearea AS GLA,
-                   yearopened, latitude AS propertyLatitude, longitude AS propertyLongitude
-            FROM geo.tbglproperty
-            WHERE province_id = %s AND is_active = '1' AND is_deleted = '0'
+            SELECT property_id AS propertyId, name AS propertyName, address,
+                   grossleasablearea AS GLA, yearopened,
+                   latitude AS propertyLatitude, longitude AS propertyLongitude
+            FROM geo.tbglproperty WHERE province_id = %s AND is_active = '1' AND is_deleted = '0'
         """, (state_id,))
         properties = cursor.fetchall()
 
         return {"city": cities, "properties": properties}
+
     except Exception as e:
-        logger.error(f"🚨 Error in /getCity: {str(e)}")
+        logger.error(f"Error in /getCity: {e}")
         return {"error": str(e)}
     finally:
         if cursor: cursor.close()
-        if conn: db.put_connection(conn)
+        db.put_connection(conn)
 
 @app.get("/getMallByCityId")
 def get_mall_by_city(city_id: int = Query(...)):
-    conn = None
-    cursor = None
     try:
-        conn = db.get_connection()
-        cursor = conn.cursor(cursor_factory=RealDictCursor)
-        cursor.execute("""
-            SELECT property_id AS propertyId, name AS propertyName, address, grossleasablearea AS GLA,
-                   yearopened, latitude AS propertyLatitude, longitude AS propertyLongitude
-            FROM geo.tbglproperty
-            WHERE city_id = %s AND is_active = '1' AND is_deleted = '0'
+        rows = run_query("""
+            SELECT property_id AS propertyId, name AS propertyName, address,
+                   grossleasablearea AS GLA, yearopened,
+                   latitude AS propertyLatitude, longitude AS propertyLongitude
+            FROM geo.tbglproperty WHERE city_id = %s AND is_active = '1' AND is_deleted = '0'
         """, (city_id,))
-        properties = cursor.fetchall()
-        return {"properties": properties}
+        return {"properties": rows}
     except Exception as e:
-        logger.error(f"🚨 Error in /getMallByCityId: {str(e)}")
+        logger.error(f"Error in /getMallByCityId: {e}")
         return {"error": str(e)}
-    finally:
-        if cursor: cursor.close()
-        if conn: db.put_connection(conn)
 
 @app.get("/getStores")
 def get_store_by_mallid(mall_id: int = Query(...)):
-    conn = None
+    conn = db.get_connection()
     cursor = None
     try:
-        conn = db.get_connection()
         cursor = conn.cursor(cursor_factory=RealDictCursor)
         cursor.execute("""
             SELECT c.CategoryName, sc.SubCategoryName, s.StoreName, b.BrandName
@@ -284,8 +251,8 @@ def get_store_by_mallid(mall_id: int = Query(...)):
 
         return {"stores": jsonable_encoder(result)}
     except Exception as e:
-        logger.error(f"🚨 Error in /getStores: {str(e)}")
+        logger.error(f"Error in /getStores: {e}")
         return {"error": str(e)}
     finally:
         if cursor: cursor.close()
-        if conn: db.put_connection(conn)
+        db.put_connection(conn)
